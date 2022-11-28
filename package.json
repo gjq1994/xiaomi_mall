@@ -26,6 +26,7 @@
     "element-ui": "^2.13.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^9.8.0",
+    "node-sass": "^8.0.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "vue-axios": "^2.1.5",
