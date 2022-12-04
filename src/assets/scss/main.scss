@@ -1,0 +1,280 @@
+@import './mixin.scss';
+// 头部组件
+.header {
+    .nav-topbar {
+        height: 39px;
+        line-height: 39px;
+        background-color: #333;
+        .container {
+            @include flex();
+            a {
+                display: inline-block;
+                color: #B0B0B0;
+                margin-right: 17px;
+            }
+            .my-cart {
+                width: 110px;
+                background-color: #ff6600;
+                color: #fff;
+                text-align: center;
+                .icon-cart {
+                    display: inline-block;
+                    height: 12px;
+                    width: 16px;
+                    background: url('/public/imgs/icon-cart-checked.png') no-repeat center;
+                    background-size: contain;
+                    margin-right: 4px;
+                }
+            }
+        }
+    }
+    .nav-header {
+        .container {
+            position: relative;
+            height: 112px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .header-logo {
+                display: inline-block;
+                width: 55px;
+                height: 55px;
+                background-color: #ff6600;
+                overflow: hidden;
+                a {
+                    display: inline-block;
+                    width: 110px;
+                    &:before {
+                        content: '';
+                        display: inline-block;
+                        width: 55px;
+                        height: 55px;
+                        background: url('/public/imgs/mi-logo.png') no-repeat center;
+                        background-size: contain;
+                        transition: margin 0.2s;
+                    }
+                    &:after {
+                        content: '';
+                        display: inline-block;
+                        width: 55px;
+                        height: 55px;
+                        background: url('/public/imgs/mi-home.png') no-repeat center;
+                        background-size: contain;
+                    }
+                    &:hover:before {
+                        margin-left: -55px;
+                        transition: margin 0.2s;
+                    }
+                }
+            }
+            .header-menu {
+                display: inline-block;
+                width: 643px;
+                .item-menu {
+                    display: inline-block;
+                    color: #333;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 60px;
+                    margin-right: 20px;
+                    &:hover {
+                        color: #ff6600;
+                        .children1 {
+                            height: 220px;
+                            opacity: 1;
+                            transition: all 2s;
+                        }
+                    }
+                    span {
+                        cursor: pointer;
+                    }
+                    .children1 {
+                        position: absolute;
+                        top: 112px;
+                        left: 0;
+                        width: 1226px;
+                        z-index: 10;
+                        height: 0;
+                        opacity: 0;
+                        overflow: hidden;
+                        transition: all 2s;
+                        border-top: 1px solid #E5E5E5;
+                        background-color: #FFF;
+                        box-shadow: 0px 7px 6px 0px rgba(0,0,0,0.11);
+                        .product {
+                            position: relative;
+                            float: left;
+                            width: 16.6%;
+                            height: 220px;
+                            font-size: 12px;
+                            text-align: center;
+                            // background-color: pink;
+                            a {
+                                display: inline-block;
+                                width: 100%;
+                                height: 100%;
+                            }
+                            img {
+                                height: 111px;
+                                width: auto;
+                                margin-top: 26px;
+                            }
+                            .pro-img {
+                                height: 137px;
+                            }
+                            .pro-name {
+                                color: #333;
+                                font-weight: bold;
+                                margin-top: 19px;
+                                margin-bottom: 8px;
+                                line-height: 12px;
+                            }
+                            .pro-price {
+                                line-height: 12px;
+                                color: #ff6600;
+                            }
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: 28px;
+                                right: 0;
+                                border-right:1px solid #D7D7D7;
+                                width: 1px;
+                                height: 100px;
+                            }
+                            &:last-child:before {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .header-search {
+                width: 319px;
+                .wrapper {
+                    height: 50px;
+                    border: 1px solid #E0E0E0;
+                    display: flex;
+                    align-items: center;
+                    input {
+                        width: 264px;
+                        height: 50px;
+                        border: none;
+                        border-right: 1px solid #E0E0E0;
+                        padding-left: 14px;
+                        padding-right: 20px;
+                        box-sizing: border-box;
+                        text-align: right;
+                    }
+                    a {
+                        display: inline-block;
+                        height: 18px;
+                        width: 18px;
+                        background: url('/public/imgs/icon-search.png') no-repeat center;
+                        background-size: contain;
+                        margin-left: 17px;
+                    }
+                }
+            }
+        }
+    }
+}
+//index组件
+
+// 服务组件
+.service {
+    .container {
+        height: 80px;
+        background-color: #fff;
+        li {
+            position: relative;
+            float: left;
+            display: flex;
+            // background-color: pink;
+            width: 306.5px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            // vertical-align: middle;
+            height: 80px;
+            // line-height: 80px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #666;
+            
+            &::before {
+                content: '';
+                position: absolute;
+                height: 34px;
+                width: 1px;
+                background-color: #e5e5e5;
+                right: 0;
+                top: 23px;
+            }
+            &:last-child::before {
+                display: none;
+            }
+            .ico-img {
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                background-color: #fff;
+                margin-right: 8px;
+            }
+            .icon-setting {
+                background: url('/public/imgs/icon-setting.png') no-repeat center;
+                background-size: contain;
+            }
+            .icon-7day {
+                background: url('/public/imgs/icon-7day.png') no-repeat center;
+                background-size: contain;
+            }
+            .icon-15day {
+                background: url('/public/imgs/icon-15day.png') no-repeat center;
+                background-size: contain;
+            }
+            .icon-150 {
+                background: url('/public/imgs/icon-post.png') no-repeat center;
+                background-size: contain;
+            }
+        }
+    }
+}
+// 底部组件
+.footer {
+    height: 233px;
+    background-color: #333;
+    border-top: 4px solid #ff6600;
+    .container {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        color: #999;
+        font-size: 16px;
+        .footer-logo {
+            text-align: center;
+            height: 100%;
+            img {
+                height: 36px;
+                margin-top: 46px;
+            }
+            .footer-name {
+                line-height: 16px;
+                font-weight: 400;
+                margin-top: 13px;
+            }
+            .footer-link {
+                text-align: center;
+                margin-top: 31px;
+                line-height: 28px;
+                span {
+                    margin: 0 4px;
+                }
+                a {
+                    color: #999;
+                }
+            }
+        } 
+    }
+}

@@ -1,7 +1,27 @@
 <template>
   <div id="app">
-    <router-view>123</router-view>
+    <router-view></router-view>
   </div>
 </template>
 
-<script></script>
+<script>
+  // import storage from './storage/log';
+  export default {
+    name: 'app',
+    data() {
+      return {
+
+      }
+    },
+    mounted() {
+      // storage.setItem('b', 2, 'user')
+    }
+  }
+</script>
+
+<style lang="scss">
+@import '@/assets/scss/reset.scss';
+@import '@/assets/scss/config.scss';
+@import '@/assets/scss/base.scss';
+@import '@/assets/scss/main.scss';
+</style>

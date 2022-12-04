@@ -1,6 +1,9 @@
 .DS_Store
 node_modules
 /dist
+exercise
+resource
+HTML-VUE
 
 
 # local env files
