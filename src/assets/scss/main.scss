@@ -74,7 +74,7 @@
                     display: inline-block;
                     color: #333;
                     font-size: 16px;
-                    font-weight: 400;
+                    font-weight: bold;
                     line-height: 60px;
                     margin-right: 20px;
                     &:hover {
@@ -82,7 +82,7 @@
                         .children1 {
                             height: 220px;
                             opacity: 1;
-                            transition: all 2s;
+                            transition: all .3s;
                         }
                     }
                     span {
@@ -97,7 +97,7 @@
                         height: 0;
                         opacity: 0;
                         overflow: hidden;
-                        transition: all 2s;
+                        transition: all .3s;
                         border-top: 1px solid #E5E5E5;
                         background-color: #FFF;
                         box-shadow: 0px 7px 6px 0px rgba(0,0,0,0.11);
@@ -180,7 +180,272 @@
     }
 }
 //index组件
-
+.index {
+    .index-top {
+        .container {   
+            .swiper-box {
+                position: relative;
+                height: 451px;
+                width: 1226px;
+                .box-list, .box-swiper {
+                    height: 451px;
+                }
+                .box-list {
+                    position: absolute;
+                    z-index: 3;
+                    left: 0;
+                    top: 0;
+                    background-color: rgba(85,88,90,0.5);
+                    width: 264px;
+                    color: #FFF;
+                    font-size: 16px;
+                    font-weight: 400;
+                    box-sizing: border-box;
+                    padding: 26px 0;
+                    li {
+                        display: block;
+                        height: 50px;
+                        width: 100%;
+                        box-sizing: border-box;
+                    }
+                    .list-item {
+                        display: flex;
+                        padding: 0 30px;
+                        justify-content: space-between;
+                        align-items: center;
+                        transition: all 0.2s;
+                        .icon-arrow {
+                            display: inline-block;
+                            width: 10px;
+                            height: 15px;
+                            background: url('/public/imgs/icon-arrow.png') no-repeat center;
+                            background-size: contain;
+                        }
+                        .children {
+                            position: absolute;
+                            left: 264px;
+                            top: 0;
+                            width: 0;
+                            height: 0;
+                            opacity: 0;
+                            background-color: #fff;
+                            box-shadow: 0px 7px 6px 0px rgba(0,0,0,0.11);
+                            border-top: 1px solid #e5e5e5;
+                            transition: opacity 0.3s;
+                            overflow: hidden;
+                            li {
+                                float: left;
+                                width: 25%;
+                                height: 75px;
+                                a {
+                                    display: flex;
+                                    margin-top: 14px;
+                                    justify-content: center;
+                                    align-items: center;
+                                    box-sizing: content-box;
+                                    font-size: 14px;
+                                    color: #333;
+                                    img {
+                                        height: 42px;
+                                    }
+                                    span {
+                                        margin-left: 15px;
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            background-color: #ff6600;
+                            padding-left: 35px;
+                            padding-right: 25px;
+                            transition: all 0.2s;
+                            .children {
+                                width: 962px;
+                                height: 450px;
+                                opacity: 1;
+                                border-top: 1px solid #e5e5e5;
+                                box-shadow: 0px 7px 6px 0px rgba(0,0,0,0.11);
+                                transition: opacity 0.3s;
+                            }
+                        }
+                    }
+                }
+                .box-swiper {
+                    width: 1226px;
+                    box-sizing: border-box;
+                    .swiper-container {
+                        height: 451px;
+                        margin: 0;
+                        top: 0;
+                        left: 0;
+                        a {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            img {
+                                width: 1226px;
+                                height: 451px;
+                            }
+                        }
+                        .swiper-button-prev {
+                            margin-left: 264px;
+                        }
+                    }
+                }
+            }
+            .ads-box {
+                height: 167px;
+                width: 100%;
+                margin-top: 14px;
+                box-sizing: border-box;
+                li:last-child {
+                    margin-right: 0;
+                }
+                li {
+                    display: inline-block;
+                    height: 167px;
+                    width: 296px;
+                    margin-right: 14px;
+                    a {
+                        display: block;
+                        height: 100%;
+                        width: 100%;
+                        background-color: #ff6600;
+                        img {
+                            width: 296px;
+                            height: 167px;
+                        }
+                    }
+                }
+            }
+            .banner {
+                height: 130px;
+                width: 100%;
+                background: url('/public/imgs/banner-1.png') no-repeat center;
+                background-size: contain;
+                margin-top: 31px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+    .index-bottom {
+        background-color: #f5f5f5;
+        padding-bottom: 50px;
+        .container {
+            .product-box {
+                span {
+                    font-size: 22px;
+                    font-weight: 400;
+                    line-height: 60px;
+                    color: #333;
+                }
+                .box-pro {
+                    height: 619px;
+                    width: 100%;
+                    .pro-lt {
+                        float: left;
+                        height: 100%;
+                        width: 224px;
+                        //margin-right: 16px;
+                        img {
+                            height: 619px;
+                            width: 224px;
+                        }
+                    }
+                    .pro-rt {
+                        float: right;
+                        width: 986px;
+                        height: 100%;
+                        ul {
+                            height: 302px;
+                            width: 986px;
+                            &:last-child {
+                                margin-top: 15px;
+                            }
+                            li {
+                                float: left;
+                                width: 236px;
+                                height: 302px;
+                                background-color: #fff;
+                                margin-right: 14px;
+                                position: relative;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                transition: all .5s;
+                                &:last-child {
+                                    margin-right: 0;
+                                }
+                                .hot {
+                                    display: block;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 84px;
+                                    width: 67px;
+                                    height: 24px;
+                                    background-color: #E82626;
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    text-align: center;
+                                    line-height: 24px;
+                                    color: #FFF;
+                                }
+                                a {
+                                    font-size: 0;
+                                    display: block;
+                                    box-sizing: content-box;
+                                    img {
+                                        height: 150px;
+                                    }
+                                    span {
+                                        display: block;
+                                        text-align: center;
+                                    }
+                                    .name {
+                                        margin-top: 15px;
+                                        font-size: 14px;
+                                        font-weight: bold;
+                                        line-height: 14px;
+                                        color: #333;
+                                    }
+                                    .subtitle {
+                                        font-size: 12px;
+                                        font-weight: bold;
+                                        line-height: 12px;
+                                        color: #999;
+                                        margin-top: 6px;
+                                        margin-bottom: 13px;
+                                    }
+                                    .price {
+                                        font-size: 15px;
+                                        font-weight: bold;
+                                        line-height: 15px;
+                                        color: #F20A0A;
+                                        .add-cart {
+                                            display: inline-block;
+                                            width: 15px;
+                                            height: 15px;
+                                            margin-left: 4px;
+                                            background: url('/public/imgs/icon-cart-hover.png') no-repeat center;
+                                            background-size: contain;
+                                            vertical-align: middle;
+                                        }
+                                    }
+                                }
+                            }
+                            li:hover {
+                                //top: 100px;
+                                box-shadow: 0px 10px 8px 0px rgba(0,0,0,0.5);
+                                transform: translate3d(0,-2px,0);
+                                transition: all .5s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 // 服务组件
 .service {
     .container {
