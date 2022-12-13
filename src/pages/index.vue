@@ -12,7 +12,7 @@
                                     <ul v-for="(items, index) in menuList" :key="index">
                                         <li v-for="(item, index) in items" :key="index">
                                             <a :href="'/#/product/id=' + (item ? item.id : '10086')" target="_blank">
-                                                <img :src="item ? item.img : '/imgs/item-box-3.jpg'" alt="加载失败">
+                                                <img v-lazy="item ? item.img : '/imgs/item-box-3.jpg'" alt="加载失败">
                                                 <span>{{item ? item.name : '小米love'}}</span>
                                             </a>
                                         </li>
@@ -87,12 +87,12 @@
                                 <li v-for="(item, j) in items" :key="j">
                                     <span class="hot" v-if="(item.id % 3 == 0)">新品</span>
                                     <a :href="'/#/product/id=' + item.id" target="_blank">
-                                        <img :src="item.mainImage" :alt="item.subtitle">
+                                        <img v-lazy="item.mainImage" :alt="item.subtitle">
                                         <span class="name">{{item.name}}</span>
                                         <span class="subtitle">{{item.subtitle}}</span>
                                         <span class="price">
                                             ￥{{item.price}}元
-                                            <span class="add-cart"></span>
+                                            <span class="add-cart" @click.prevent="show_Modal=true"></span>
                                         </span>
                                     </a>
                                 </li>
@@ -103,17 +103,32 @@
             </div>
         </div>
         <service-bar></service-bar>
+        <modal title="提示"
+            sureText="确认信息"
+            modalType="middle"
+            btnType="3"
+            :showModal="show_Modal"
+            @submit="goToCart"
+            @cancel="show_Modal=false"
+            @toClose="()=>show_Modal=false">
+            <template v-slot:body="slotProp">
+                <div>{{slotMessage}}</div>
+                <div>{{slotProp.con+1}}</div>
+            </template>
+        </modal>
     </div>
 </template>
 
 <script>
-import ServiceBar from '@/components/ServiceBar';
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
-import 'swiper/css/swiper.css';
+import ServiceBar from '@/components/ServiceBar'
+import Modal from '@/components/Modal.vue'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
 export default {
     name: 'index',
     components: {
         ServiceBar,
+        Modal,
         Swiper,
         SwiperSlide,
     },
@@ -214,7 +229,9 @@ export default {
                     img:'/imgs/ads/ads-4.jpg'
                 }
             ],
-            phoneList: []
+            phoneList: [],
+            slotMessage: '父组件字符串',
+            show_Modal: false,
         }
     },
     mounted() {
@@ -231,6 +248,19 @@ export default {
                 res.list = res.list.slice(6, 14)
                 this.phoneList = [res.list.slice(0, 4), res.list.slice(4, 8)]
             })
+        },
+        addCart(id) {
+            this.axios.post('/carts', {
+                productId: id,
+                selected: true
+            }).then((res) => {
+
+            }).catch(() => {
+                this.showModal = true
+            })         
+        },
+        goToCart() {
+            this.$router.push('/cart')
         }
     }
 }

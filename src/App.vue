@@ -24,4 +24,13 @@
 @import '@/assets/scss/config.scss';
 @import '@/assets/scss/base.scss';
 @import '@/assets/scss/main.scss';
+@import '@/assets/scss/modal.scss';
+
+// 去除了网页可视窗口的滚动条
+::-webkit-scrollbar {
+     width: 0 !important;
+   }
+   ::-webkit-scrollbar {
+     width: 0 !important; height: 0;
+   }
 </style>

@@ -9,9 +9,9 @@
                     <a href="https://wangdoc.com/" target="_blank">JS学习</a><span>|</span>
                     <a href="javascript:;">心想事成</a><span>|</span>
                     <a href="javascript:;">恭喜发财</a><span>|</span>
-                    <a href="javascript:;">求职顺利</a>
+                    <a href="/#/learn">求职顺利</a>
                     <br>
-                    <span>把脆弱的一面展示给别人，只能收获鄙夷</span>
+                    <span>may the force be with you</span>
                 </div>
             </div>
         </div>

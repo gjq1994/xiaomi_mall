@@ -49,7 +49,7 @@
                 </div>
                 <div class="header-search">
                     <div class="wrapper">
-                        <input type="text" name="keyword">
+                        <input type="text" name="keyword" v-model="username">
                         <a href="javascript:;"></a>
                     </div>
                 </div>
