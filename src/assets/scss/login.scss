@@ -1,0 +1,167 @@
+.login {
+    height: 100%;
+    padding-bottom: 50px;
+    .login-header {
+        height: 112px;
+        width: 100%;
+        background-color: #fff;
+        .container {
+            .login-logo {
+                height: 112px;
+                width: 222px;
+                // margin-left: 190px;
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }     
+    }
+    .wrapper {
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto; 
+        background: url('/public/imgs/login-bg.jpg') no-repeat center;
+        .container {
+            position: relative;
+            height: 576px;
+            .login-box {
+                position: absolute;
+                top: 37px;
+                right: 37px;
+                height: 510px;
+                width: 410px;
+                background-color: #fff;
+                text-align: center;
+                .login-top {
+                    margin-top: 40px;
+                    font-size: 0;
+                    font-weight: 400;
+                    color: #666;
+                    span {
+                        font-size: 24px;
+                        line-height: 24px;
+                        margin: 0;
+                        cursor: pointer;
+                    }
+                    .foo {
+                        margin: 0 35px;
+                        color: #d7d7d7;
+                        cursor: auto;
+                    }
+                    .login-color {  
+                        color: #f60;
+                    }
+                }
+                .login-form {
+                    margin-top: 49px;
+                    .lo-input {
+                        width: 348px;
+                        height: 50px;
+                        font-size: 14px;
+                        font-weight: 300;
+                        line-height: 50px;
+                        text-align: left;
+                        border: 1px solid #E5E5E5;
+                        margin: 0 auto;
+                        &:last-child {
+                            margin-top: 20px;
+                        }
+                        input {
+                            margin-left: 18px;
+                            border: none;
+                        }
+                    }
+                }
+                .login-picture {
+                    margin-top: 49px;
+                }
+                .login-button {
+                    width: 348px;
+                    height: 50px;
+                    background-color: #f60;
+                    font-size: 16px;
+                    line-height: 50px;
+                    text-align: center;
+                    color: #fff;
+                    margin: 0 auto;
+                    margin-top: 30px;
+                    cursor: pointer;
+                }
+                .login-word {
+                    width: 348px;
+                    margin: 0 auto;
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: #999;
+                    line-height: 14px;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 14px;
+                    span {
+                        cursor: pointer;
+                        &:hover {
+                            color: #f60;
+                        }
+                    }
+                }
+            }
+            .register-box {
+                position: absolute;
+                top: 37px;
+                right: 37px;
+                height: 510px;
+                width: 410px;
+                background-color: #fff;
+                padding: 20px 30px 0;
+                box-sizing: border-box;
+            }
+        }      
+    }   
+    .login-footer {
+        height: 391px;
+        width: 100%;
+        background-color: #fff;
+        text-align: center;
+        padding-top: 252px;
+        box-sizing: border-box;
+        .container {
+            .footer-word {
+                font-size: 14px;
+                font-weight: 400;
+                color: #333;
+                .word-up {
+                    line-height: 14px;
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #333;
+                    a {
+                        color: #333;
+                    }
+                    span {
+                        margin: 0 13px;
+                    }
+                }
+                .word-down {
+                    margin-top: 20px;
+                    line-height: 14px;
+                    display: block;
+                    span {
+                        display: inline-block;
+                        height: 14px;
+                        width: 14px;
+                        background: url('/public/imgs/toto.png') no-repeat center;
+                        background-size: contain;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+}

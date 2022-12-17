@@ -27,10 +27,10 @@
 @import '@/assets/scss/modal.scss';
 
 // 去除了网页可视窗口的滚动条
-::-webkit-scrollbar {
-     width: 0 !important;
-   }
-   ::-webkit-scrollbar {
-     width: 0 !important; height: 0;
-   }
+// ::-webkit-scrollbar {
+//      width: 0 !important;
+//    }
+//    ::-webkit-scrollbar {
+//      width: 0 !important; height: 0;
+//    }
 </style>
