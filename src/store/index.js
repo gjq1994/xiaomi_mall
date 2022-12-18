@@ -5,20 +5,29 @@ Vue.use(VueX)
 
 export default new VueX.Store({
     state: {
-        username: '',
+        username: '123',
         email: '',
-        phone: ''
+        phone: '',
+        num: '0'
     },
     getters: {
-
+        hitState(state) {
+            return `花Q ${state.username}`
+        }
     },
     mutations: {
-
+        setNumber(state, n) {
+            state.num = n
+        }
     },
     actions: {
-
-    },
-    modules: {
-
+        setNum(content) {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    content.commit('setNumber', Math.random())
+                    resolve()
+                }, 1000)
+            })
+        } 
     }
 })

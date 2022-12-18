@@ -9,7 +9,7 @@
                     <a href="javascript:;">协议规则</a>
                 </div>
                 <div class="topbar-user">
-                    <a href="javascript:;" v-if="username">{{username}}</a>
+                    <a href="javascript:;" v-if="username">{{hitState}}</a>
                     <a href="javascript:;" v-if="!username" @click="login">登录</a>
                     <a href="javascript:;" v-if="username">我的订单</a>
                     <a href="javascript:;" class="my-cart"><span class="icon-cart"></span>购物车</a>
@@ -49,8 +49,8 @@
                 </div>
                 <div class="header-search">
                     <div class="wrapper">
-                        <input type="text" name="keyword" v-model="username">
-                        <a href="javascript:;"></a>
+                        <input type="text" name="keyword" :value="num">
+                        <a href="javascript:;" @click="setNum"></a>
                     </div>
                 </div>
             </div>
@@ -59,11 +59,11 @@
 </template>
 
 <script>
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex'
     export default {
         name: 'nav-header',
         data() {
             return {
-                username: 'loong',
                 phoneList: []
             }
         },
@@ -73,7 +73,14 @@
         filters: {
             
         },
+        computed: {
+            ...mapState(['username', 'num']),
+            ...mapGetters(['hitState']),
+            
+        },
         methods: {
+            ...mapActions(['setNum']),
+            ...mapMutations(['setNumber']),
             login() {
                 this.$router.push('/login')
             },
