@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
   // import storage from './storage/log';
   export default {
     name: 'app',
@@ -15,6 +16,31 @@
     },
     mounted() {
       // storage.setItem('b', 2, 'user')
+      if(this.$cookie.get('userId')) {
+        this.getUser()
+        this.getCartCount()
+      }
+    },
+    computed: {
+      ...mapState(['data'])
+    },
+    methods: {
+      ...mapActions(['setUserName', 'setList', 'setData']),
+      getUser() {
+        this.axios.get('/user').then((res) => {
+          this.setUserName(res.username)
+          this.setList(res)
+        }).catch((e) => {
+          console.log('退出登录,无法读取1')
+        })
+      },
+      getCartCount() {
+        this.axios.get('/carts/products/sum').then((res) => {
+          this.setData(res)
+        }).catch((e) => {
+          console.log('退出登录,无法读取2')
+        })
+      }
     }
   }
 </script>

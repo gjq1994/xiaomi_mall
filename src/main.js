@@ -13,14 +13,20 @@ axios.defaults.timeout = 8000
 
 axios.interceptors.response.use(function(response) {
     let res = response.data
+    let path = location.hash
     if(res.status == 0) {
-        if(res.data) {
+        // 如果data等于0，那么返回值为undefined
+        if(res.data == 0) {
+            return res.data
+        } else if(res.data) {
             return res.data
         } else {
             return res.msg
-        }      
+        }  
     } else if(res.status == 10) {
-        window.location.href = '/#/login'
+        if(path!='#/index') {
+            window.location.href = '/#/login'
+        }
         return //Promise.reject(res)
     } else {
         Message.warning(res.msg)

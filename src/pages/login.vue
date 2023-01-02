@@ -81,6 +81,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
     name: 'login',
     data() {
@@ -149,6 +150,7 @@ export default {
         
     },
     methods: {
+        ...mapActions(['setUserName']),
         login() {
             let { username, password } = this
             if(!username || !password) {
@@ -159,8 +161,18 @@ export default {
                 username,
                 password
             }).then((res) => {
-                this.$cookie.set('userId', res.id, {expires: '1M'})
-                this.$router.push('/index')
+                this.$cookie.set('userId', res.id, {expires: 'Session'})
+                this.setUserName(res.username)
+                this.$router.push({
+                    name: 'index',
+                    params: {
+                        from: 'login'
+                    }
+                })
+                this.$message({
+                    message: '登陆成功',
+                    type: 'success'
+                })
             }).catch(() => console.log('发现一个错误'))
         },
         register() {
