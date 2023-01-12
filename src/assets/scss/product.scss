@@ -1,0 +1,221 @@
+.product {
+    .param-btn {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 30px;
+        text-align: center;
+        height: 30px;
+        width: 110px;
+        background-color: #FF7301;
+        color: #fff;
+        cursor: pointer;
+    }
+    .pro-bg-1 {
+        position: relative;
+        height: 718px;
+        background: url('@/../public/imgs/product/product-bg-1.png') no-repeat center;
+        background-size: cover;
+        margin: 0 auto;
+        .pro-msg {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            margin-top: 55px;
+            text-align: center;
+            font-size: 0;
+            h2 {
+                font-size: 80px;
+                line-height: 80px;
+                font-weight: 600;
+                color: #333;
+            }
+            h3 {
+                font-size: 24px;
+                line-height: 24px;
+                font-weight: 300;
+                color: #333;
+                margin-top: 20px;
+            }
+            p { 
+                    font-size: 16px;
+                    font-weight: 100;
+                    margin-top: 22px;
+                a {
+                    color: #333;
+                    font-size: 16px;
+                    font-weight: 100;
+                }
+                span {
+                    margin: 0 35px;
+                }
+            }
+            .price {
+                display: block;
+                font-size: 38px;
+                font-weight: 400;
+                margin-top: 40px;
+            }
+        }
+    }
+    .pro-bg-2 {
+        height: 480px;
+        .container {
+            img {
+                height: 397px;
+                margin: 38px 0;
+                border: 1px dashed #ccc;
+            }
+        }
+    }
+    .pro-bg-3 {
+        height: 638px;
+        background: url('@/../public/imgs/product/product-bg-3.png') no-repeat center;
+        background-size: cover;
+    }
+    .pro-swiper {
+        height: 400px;
+        text-align: center;
+        position: relative;
+        .mySwiper {
+            margin-top: 36px;
+            .mySlide {
+                img {
+                    width: 100%; 
+                }
+            }
+        }
+        .swiper-pagination {
+            z-index: 4;
+            position: absolute;
+            left: 50%;
+            top: 270px;
+            transform: translate(-50%, 0);
+            .swiper-pagination-bullet {
+                width: 29px;
+                height: 3px;
+                background-color: #333;
+                border-radius: 0%;
+                margin: 0 8px;
+            }
+        }
+        .pname {
+            margin-top: 65px;
+            font-size: 18px;
+            font-weight: 400;
+            color: #333;
+        }
+    }
+    .pro-videos {
+        height: 1044px;
+        box-sizing: border-box;
+        background-color: #000;
+        text-align: center;
+        color: #fff;
+        padding-top: 82px;
+        h2 {
+            font-size: 60px;
+            font-weight: 500;
+        }
+        p {
+            margin-top: 47px;
+            font-size: 24px;
+            font-weight: 300;
+        }
+        .videos-bg {
+            position: relative;
+            margin: 58px auto 0;
+            width: 1226px;
+            height: 540px;
+            background: url('/public/imgs/product/gallery-1.png') no-repeat center;
+            background-size: cover;
+            .seeVideo {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 60px;
+                height: 60px;
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+        .video-box {
+            z-index: 7;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            transition: all .4s;
+            border-radius: 0;
+            // leave-to和enter-active不能写到一起，否则不起作用
+            &.videoSlide-leave-to {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+            }
+            &.videoSlide-enter-active {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+            }
+            &.videoSlide-enter-to,
+            .videoSlide-leave-active {
+                width: 100%;
+                height: 100%;
+                border-radius: 0;
+            }
+            .overlay {
+                z-index: 6;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(3, 3, 3, .4);
+            }
+            .video {
+                position: absolute;
+                z-index: 8;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                transition: all .4s;
+                opacity: .3;
+                &.slide {
+                    width: 1000px;
+                    height: 536px;
+                    border-radius: 0;
+                    opacity: 1;
+                    transition: all .4s;
+                }
+                video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .toClose {
+                    position: absolute;
+                    top: 30px;
+                    right: 30px;
+                    height: 15px;
+                    width: 15px;
+                    transform: translate(50%, -50%);
+                    background: url('/public/imgs/icon-close.png') no-repeat center;
+                    background-size: cover;
+                    cursor: pointer;
+                    transition: all, .3s;
+                    &:hover {
+                        height: 20px;
+                        width: 20px;
+                        transition: all, .3s;
+                    }
+                }
+            }
+        }
+    }
+}

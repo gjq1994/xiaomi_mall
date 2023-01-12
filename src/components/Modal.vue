@@ -1,5 +1,5 @@
 <template>
-    <transition name="slide" mode="">
+    <transition name="slide">
         <div class="modal" v-show="showModal">
             <div class="mask"></div>
             <div class="modal-dialog">

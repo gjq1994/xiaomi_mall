@@ -25,8 +25,7 @@ export default new Router({
                     path: '/detail/:id',
                     name: 'detail',
                     component: () => import('./../pages/detail.vue')
-                },
-                {
+                },{
                     path: '/learn',
                     name: 'learn',
                     component: () => import('./../pages/learn.vue')

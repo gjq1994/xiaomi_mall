@@ -134,12 +134,14 @@ export default {
     },
     data() {
         return {
-            swiperOption: {},
+            // swiperOption: {},
             swiperOptions: {
-                autoplay: true,
-                loop: true,
-                delay: 2000,
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                },
                 speed: 2000,
+                loop: true,
                 effect: 'cube',
                  cubeEffect: {
                      slideShadows: true,
