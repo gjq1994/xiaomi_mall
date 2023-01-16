@@ -9,7 +9,7 @@
                 <span>|</span>
                 <span class="pick">参数</span>
                 <span>|</span>
-                <span class="pick">商品详情</span>
+                <span class="pick">{{ content }}</span>
                 <slot name="btn"></slot>
             </div>
         </div>
@@ -27,13 +27,18 @@ export default {
     },
     data() {
         return {
-            isFixed: false
+            isFixed: false,
+            content: '',
         }
     },
     mounted() {
         window.addEventListener('scroll', this.initHeight)
+        this.getContent()
     },
     methods: {
+        getContent() {
+            this.content = this.$route.name == 'detail' ? '客户评价' : '商品详情'
+        },
         initHeight() {
             let scrollTop = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
             this.isFixed = scrollTop > 150 ? true : false
@@ -48,27 +53,29 @@ export default {
 
 <style lang="scss">
 .nav-bar {
-    z-index: 5;
     width: 100%;
     height: 69px;
     background-color: #fff;
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
     &.is_Fixed {
+        z-index: 5;
         position: fixed;
         top: 0;
     }
     .container {
         .param-left { 
             float: left;
-            line-height: 71px;
+            height: 100%;
+            line-height: 69px;
             font-size: 18px;
             font-weight: bold;
             color: #333;
         }
         .param-right {
             float: right;
-            line-height: 71px;
+            height: 100%;
+            line-height: 69px;
             span {
                 font-size: 14px;
                 font-weight: bold;

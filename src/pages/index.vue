@@ -143,7 +143,7 @@ export default {
                 speed: 2000,
                 loop: true,
                 effect: 'cube',
-                 cubeEffect: {
+                cubeEffect: {
                      slideShadows: true,
                      shadow: false,
                 //     shadowOffset: 100,
@@ -237,7 +237,7 @@ export default {
         }
     },
     mounted() {
-        this.init()
+        this.init()  
     },
     methods: {
         init() {

@@ -452,56 +452,56 @@
     .container {
         height: 80px;
         background-color: #fff;
-        li {
-            position: relative;
-            float: left;
-            display: flex;
-            // background-color: pink;
-            width: 306.5px;
-            justify-content: center;
-            text-align: center;
-            align-items: center;
-            // vertical-align: middle;
-            height: 80px;
-            // line-height: 80px;
-            font-size: 16px;
-            font-weight: 400;
-            color: #666;
-            
-            &::before {
-                content: '';
-                position: absolute;
-                height: 34px;
-                width: 1px;
-                background-color: #e5e5e5;
-                right: 0;
-                top: 23px;
-            }
-            &:last-child::before {
-                display: none;
-            }
-            .ico-img {
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                background-color: #fff;
-                margin-right: 8px;
-            }
-            .icon-setting {
-                background: url('/public/imgs/icon-setting.png') no-repeat center;
-                background-size: contain;
-            }
-            .icon-7day {
-                background: url('/public/imgs/icon-7day.png') no-repeat center;
-                background-size: contain;
-            }
-            .icon-15day {
-                background: url('/public/imgs/icon-15day.png') no-repeat center;
-                background-size: contain;
-            }
-            .icon-150 {
-                background: url('/public/imgs/icon-post.png') no-repeat center;
-                background-size: contain;
+        ul {
+            height: 100%;
+            li {
+                position: relative;
+                float: left;
+                display: flex;
+                width: 25%;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                height: 80px;
+                font-size: 16px;
+                font-weight: 400;
+                color: #666;
+                
+                &::before {
+                    content: '';
+                    position: absolute;
+                    height: 34px;
+                    width: 1px;
+                    background-color: #e5e5e5;
+                    right: 0;
+                    top: 23px;
+                }
+                &:last-child::before {
+                    display: none;
+                }
+                .ico-img {
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    background-color: #fff;
+                    margin-right: 8px;
+                }
+                .icon-setting {
+                    background: url('/public/imgs/icon-setting.png') no-repeat center;
+                    background-size: contain;
+                }
+                .icon-7day {
+                    background: url('/public/imgs/icon-7day.png') no-repeat center;
+                    background-size: contain;
+                }
+                .icon-15day {
+                    background: url('/public/imgs/icon-15day.png') no-repeat center;
+                    background-size: contain;
+                }
+                .icon-150 {
+                    background: url('/public/imgs/icon-post.png') no-repeat center;
+                    background-size: contain;
+                }
             }
         }
     }
