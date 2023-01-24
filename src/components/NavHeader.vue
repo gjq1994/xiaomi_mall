@@ -13,7 +13,7 @@
                     <a href="javascript:;" v-if="!username" @click="login">登录</a>
                     <a href="javascript:;" v-if="username"  @click="logout">退出</a>
                     <a href="javascript:;" v-if="username">我的订单</a>
-                    <a href="javascript:;" class="my-cart">
+                    <a href="javascript:;" class="my-cart" @click="goToCart">
                         <span class="icon-cart"></span>
                         <span>购物车</span>
                         <span>{{ data }}</span>
@@ -88,7 +88,7 @@ import { mapActions, mapGetters, mapMutations, mapState } from 'vuex'
             
         },
         methods: {
-            ...mapActions(['setNum', 'setUserName']),
+            ...mapActions(['setNum', 'setUserName', 'setData']),
             ...mapMutations(['setNumber']),
             login() {
                 this.$router.push('/login')
@@ -117,10 +117,17 @@ import { mapActions, mapGetters, mapMutations, mapState } from 'vuex'
             },
             getCartCount() {
                 this.axios.get('/carts/products/sum').then((res) => {
-                    this.setData(res)
+                    this.$store.dispatch('setData', res)
                 }).catch((e) => {
                     console.log('退出登录,无法读取2')
                 })
+            },
+            goToCart() {
+                if(this.username) {
+                    this.$router.push('/cart')
+                } else {
+                    return
+                }
             }
         }
     }

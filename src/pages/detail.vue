@@ -168,7 +168,8 @@ export default {
             this.axios.post('/carts', {
                     productId: id,
                     selected: true
-            }).then((res) => {
+            }).then((res={cartProductVoList:[]}) => {
+                this.$store.dispatch('setData', res.cartProductVoList.length)
                 this.$router.push('/cart')
             })
         }

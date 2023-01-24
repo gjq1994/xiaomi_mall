@@ -27,7 +27,7 @@ import { mapActions, mapState } from 'vuex'
     methods: {
       ...mapActions(['setUserName', 'setList', 'setData']),
       getUser() {
-        this.axios.get('/user').then((res) => {
+        this.axios.get('/user').then((res={}) => {
           this.setUserName(res.username)
           this.setList(res)
         }).catch((e) => {
@@ -35,7 +35,7 @@ import { mapActions, mapState } from 'vuex'
         })
       },
       getCartCount() {
-        this.axios.get('/carts/products/sum').then((res) => {
+        this.axios.get('/carts/products/sum').then((res=0) => {
           this.setData(res)
         }).catch((e) => {
           console.log('退出登录,无法读取2')

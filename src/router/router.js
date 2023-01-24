@@ -25,20 +25,12 @@ export default new Router({
                     path: '/detail/:id',
                     name: 'detail',
                     component: () => import('./../pages/detail.vue')
-                },{
-                    path: '/learn',
-                    name: 'learn',
-                    component: () => import('./../pages/learn.vue')
                 }
             ]
         }, {
             path: '/login',
             name: 'login',
             component: () => import('./../pages/login.vue')
-        }, {
-            path: '/register',
-            name: 'register',
-            component: () => import('./../pages/register.vue')
         }, {
             path: '/cart',
             name: 'cart',

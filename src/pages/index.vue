@@ -92,7 +92,7 @@
                                         <span class="subtitle">{{item.subtitle}}</span>
                                         <span class="price">
                                             ￥{{item.price}}元
-                                            <span class="add-cart" @click.prevent="show_Modal=true"></span>
+                                            <span class="add-cart" @click.prevent="toAdd(item.id)"></span>
                                         </span>
                                     </a>
                                 </li>
@@ -108,7 +108,7 @@
             modalType="middle"
             btnType="3"
             :showModal="show_Modal"
-            @submit="goToCart"
+            @submit="addCart"
             @cancel="show_Modal=false"
             @toClose="()=>show_Modal=false">
             <template v-slot:body="slotProp">
@@ -232,7 +232,8 @@ export default {
                 }
             ],
             phoneList: [],
-            slotMessage: '父组件字符串',
+            proId: '',
+            slotMessage: '确定添加购物车？',
             show_Modal: false,
         }
     },
@@ -251,18 +252,26 @@ export default {
                 this.phoneList = [res.list.slice(0, 4), res.list.slice(4, 8)]
             })
         },
-        addCart(id) {
+        toAdd(id) {
+            this.show_Modal = true
+            this.proId = id
+        },
+        getCartCount() {
+            this.axios.get('/carts/products/sum').then((res) => {
+                this.$store.dispatch('setData', res)
+            })
+        },
+        addCart() {
             this.axios.post('/carts', {
-                productId: id,
+                productId: this.proId,
                 selected: true
             }).then((res) => {
-
-            }).catch(() => {
-                this.showModal = true
-            })         
-        },
-        goToCart() {
-            this.$router.push('/cart')
+                if(res.cartProductVoList != []) {
+                    this.show_Modal = false
+                    this.getCartCount()
+                    this.$message.success('添加成功！')
+                }
+            })        
         }
     }
 }

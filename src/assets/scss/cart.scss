@@ -1,0 +1,191 @@
+.cart {
+    .myCart {
+        padding-top: 30px;
+        padding-bottom: 80px;
+        background-color: #f5f5f5;
+        .container {
+            height: 100%;
+            .cartList {
+                background-color: #fff;
+                ul {
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding-left: 40px;
+                    padding-right: 40px;
+                    font-size: 0;
+                    li {
+                        height: 100%;
+                        text-align: center;
+                        float: left;
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #666;
+                        border-bottom: 1px solid #e5e5e5;
+                        box-sizing: border-box;
+                        overflow: hidden;
+                        .check-box {
+                            box-sizing: border-box;
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 22px;
+                            height: 22px;
+                            border: 1px solid #666;
+                            border-radius: 10%;
+                            margin-right: 17px;
+                        }
+                        .beCheck {
+                            background: url('/public/imgs/icon-gou.png') no-repeat center;
+                            background-size: contain;
+                            background-color: #f60;
+                            border-color: #f60;
+                        }
+                    }
+                }
+                .list-item-head {
+                    height: 79px;
+                    line-height: 79px;
+                    .ti-1 {
+                        width: 10%;
+                        text-align: left;
+                        padding-left: 30px;
+                    }
+                    .ti-2 {
+                        width: 40%;
+                        text-align: left;
+                        padding-left: 140px;
+                    }
+                    .ti-3 {
+                        width: 10%;
+                    }
+                    .ti-4 {
+                        width: 20%;
+                    }
+                    .ti-5 {
+                        width: 10%;
+                    }
+                    .ti-6 {
+                        width: 10%;
+                    }
+                }
+                .list-item-info {
+                    height: 124px;
+                    line-height: 124px;
+                    &:last-child {
+                        li {
+                            border: none;
+                        }
+                    }
+                    .itemCheck {
+                        width: 10%;
+                        text-align: left;
+                        padding-left: 30px;
+                    }
+                    .itemInfo {
+                        width: 40%;
+                        text-align: left;
+                        font-size: 0;
+                        img {
+                            width: 80px;
+                            margin-right: 30px;
+                            vertical-align: middle;
+                        }
+                        span {
+                            font-size: 18px;
+                            font-weight: 400;
+                            color: #333;
+                            margin-right: 15px;
+                        }
+                    }
+                    .itemPrice {
+                        width: 10%;
+                        font-size: 16px;
+                    }
+                    .itemNum {
+                        width: 20%;
+                        font-size: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .numBox {
+                            //margin: auto;
+                            width: 150px;
+                            height: 40px;
+                            line-height: 40px;
+                            border: 1px solid #666;
+                            span {
+                                font-size: 20px;
+                                display: inline-block;
+                                vertical-align: middle;
+                                height: 100%;
+                                width: 33%;
+                            }
+                            .num-plus,
+                            .num-minus {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .itemFinalPrice {
+                        width: 10%;
+                        font-size: 16px;
+                        color: #f60;
+                    }
+                    .toDelete {
+                        width: 10%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .ico-del {
+                            width: 15px;
+                            height: 15px;
+                            background: url('/public/imgs/icon-close.png') no-repeat center;
+                            background-size: cover;
+                            transition: all .2s;
+                            cursor: pointer;
+                            &:hover {
+                                height: 20px;
+                                width: 20px;
+                                transition: all .2s;
+                            }
+                        }
+                    }
+                }
+            }
+            .cartBottom {
+                width: 100%;
+                height: 50px;
+                line-height: 50px;
+                font-size: 0;
+                margin-top: 20px;
+                span {
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #666;
+                }
+                div {
+                    float: right;
+                    height: 100%;
+                    font-size: 14px;
+                    font-weight: 400;
+                    text-align: center;
+                }
+                .myColor {
+                    color: #f60;
+                    .bigWord {
+                        color: #f60;
+                        font-size: 20px;
+                    }
+                }
+                .orderBtn {
+                    width: 200px;
+                    background-color: #f60;
+                    color: #fff;
+                    cursor: pointer;
+                    font-size: 18px;
+                    font-weight: 300;
+                    margin-left: 31px;
+                }
+            }
+        }
+    }
+}
